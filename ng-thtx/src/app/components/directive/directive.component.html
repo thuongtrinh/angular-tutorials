@@ -1,0 +1,25 @@
+<p>
+  directive works!
+</p>
+<div>
+  <h2>{{title}}</h2>
+  <h3 *ngIf="display">Display directive with ngIf</h3>
+  <div [ngSwitch]="color">
+      <p *ngSwitchCase="'green'" [style.color]="color">This is Green color</p>
+      <p *ngSwitchCase="'red'" [style.color]="color">This is Red color</p>
+      <p *ngSwitchCase="'blue'" [style.color]="color">This is Blue color</p>
+      <ng-container *ngSwitchCase="'white'">
+          <!-- use a ng-container to group multiple root nodes -->
+          <h1>NG-SWITCH</h1>
+      </ng-container>
+      <p *ngSwitchDefault>This is default color</p>
+  </div>
+  <ul>
+      <li *ngFor="let item of arrCountry">{{item}}</li>
+  </ul>
+  <p [ngClass]="{addClassOne:cOne, addClassTwo:cTwo}">This is ngClass apply style</p>
+  <button (click)="clickToggle()">toggle</button>
+  <p [ngStyle]="{'font-style':font, 'font-size':size}">This is ngStyle apply style</p>
+<br>
+
+</div>

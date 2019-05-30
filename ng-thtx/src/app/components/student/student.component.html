@@ -1,0 +1,9 @@
+<div>
+  <h2>{{title}}</h2>
+  First name:<input type="text" [(ngModel)]="fname" #firstname><br><br>
+  Last name: <input type="text" [(ngModel)]="lname"><br>
+  <br>
+  Full name: {{fname}} {{lname}}<br>
+  Full name json: {{firstname.value|json}}
+</div>
+
