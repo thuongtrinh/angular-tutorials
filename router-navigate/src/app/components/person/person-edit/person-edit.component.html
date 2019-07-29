@@ -1,0 +1,36 @@
+<h3 class="text-center mb-4">Edit Person</h3>
+<div class="offset-md-3 col-md-8" *ngIf="person">
+  <form [formGroup]="personForm" (ngSubmit)="onFormSubmit()">
+      <div class="form-group row">
+          <label for="name" class="col-md-2 col-form-label">Id</label>
+          <div class="col-md-7">
+              <label for="name" class="col-md-2 col-form-label">{{ person.personId }}</label>
+          </div>
+        </div>
+    <div class="form-group row">
+      <label for="name" class="col-md-2 col-form-label">Name</label>
+      <div class="col-md-7">
+          <input class="form-control" formControlName="name">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="capital" class="col-md-2 col-form-label">City</label>
+      <div class="col-md-7">
+          <input class="form-control" formControlName="city">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="currency" class="col-md-2 col-form-label">Mobile</label>
+      <div class="col-md-7">
+        <input class="form-control" formControlName="mobile">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-md-2"></label>
+      <div class="col-sm-5">
+        <button class="btn btn-primary px-4">Update</button>
+      </div>
+    </div>
+  </form>
+</div>
