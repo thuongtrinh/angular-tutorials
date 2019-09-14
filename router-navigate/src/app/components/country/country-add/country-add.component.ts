@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CountryService } from 'src/app/services/country.service';
 
 @Component({
@@ -11,7 +11,7 @@ export class CountryAddComponent implements OnInit {
   constructor(private countryService: CountryService) {}
 
   countryForm = new FormGroup({
-    name: new FormControl(),
+    name: new FormControl(null, Validators.required),
     capital: new FormControl(),
     currency: new FormControl()
   });

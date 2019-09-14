@@ -24,4 +24,15 @@ export class LogoutComponent implements OnInit {
     console.log('Do logout');
     this.router.navigate([ '/login' ]);
   }
+
+  changePassword() {
+    const username = sessionStorage.getItem('SessionUsername');
+    const password = sessionStorage.getItem('SessionPassword');
+
+    if (username != null && password != null) {
+      this.router.navigate(['/change-password']);
+    } else {
+      this.router.navigate(['/login']);
+    }
+  }
 }

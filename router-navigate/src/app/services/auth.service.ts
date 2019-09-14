@@ -3,10 +3,12 @@ import { User } from '../models/user.model';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-const USERS = [
-  new User(1, 'Smith', '123', 'ADMIN'),
-  new User(2, 'Danies', '123', 'USER')
-];
+let user1 = new User();
+let user2 = new User();
+user1.setValues(1, 'Smith', '123', 'ADMIN');
+user2.setValues(2, 'Danies', '123', 'USER');
+
+const USERS = [ user1, user2 ];
 const usersObservable = of(USERS);
 
 @Injectable({
@@ -45,6 +47,8 @@ export class AuthService {
   }
 
   logoutUser(): void {
+    sessionStorage.removeItem('SessionUserName');
+    sessionStorage.removeItem('SessionPassword');
     this.isloggedIn = false;
   }
 

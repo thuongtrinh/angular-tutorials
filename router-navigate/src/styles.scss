@@ -63,3 +63,15 @@ body, * {
  overflow: hidden;
  white-space: nowrap;
 }
+
+.error {
+  color: red;
+  font-size: 15px;
+  font-style: italic;
+}
+
+.success{
+  color: green;
+  font-size: 15px;
+  font-style: italic;
+}

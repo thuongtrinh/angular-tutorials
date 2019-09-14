@@ -5,11 +5,14 @@ import { Observable, of } from 'rxjs';
 import { Person } from '../models/person.model';
 import { map } from 'rxjs/operators';
 
-const PERSONS = [
-  new Person(1, 'Smith1', 'Varanasi', '0978776555'),
-  new Person(2, 'Smith2', 'Ayodhya', '0967855447'),
-  new Person(3, 'Smith3', 'Mathura', '0122345643')
-];
+const p1 = new Person('Smith1', 20, 'Varanasi', 'VN', '0978776555', false);
+const p2 = new Person('Smith2', 22, 'Ayodhya', 'VN', '0967855447', false);
+const p3 = new Person('Smith3', 23, 'Mathura', 'VN', '0122345643', true);
+p1.setPersonId(1);
+p1.gender = 'male';
+p2.setPersonId(2);
+p3.setPersonId(3);
+const PERSONS = [ p1, p2, p3 ];
 
 const personList$ = of(PERSONS);
 const personListPromise = Promise.resolve(PERSONS);
@@ -24,7 +27,13 @@ export class PersonService {
   constructor(private http: HttpClient) {}
 
   addPerson(person: Person): Observable<Person>{
-    return this.http.post<Person>(this.url, person);
+    // return this.http.post<Person>(this.url, person);
+    return this.getPersons().pipe(map(persons => {
+      const idMax = persons.length + 1;
+      person.setPersonId(idMax);
+      persons.push(person);
+      return person;
+    }));
   }
 
   getPersons(): Observable<Person[]> {

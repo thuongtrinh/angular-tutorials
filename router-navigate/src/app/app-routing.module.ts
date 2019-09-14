@@ -4,6 +4,11 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { GlobalErrorComponent } from './components/global-error/global-error.component';
 import { DashboardLayoutComponent } from './components/dashboard-layout/dashboard-layout.component';
 import { AuthGuardService } from './services/auth-guard.service';
+import { CityComponent } from './components/city/city.component';
+import { CityListComponent } from './components/city/city-list/city-list.component';
+import { UserComponent } from './components/user/user.component';
+import { TeamComponent } from './components/team/team.component';
+import { UserReactiveFormComponent } from './components/user/user-reactive-form/user-reactive-form.component';
 
 const routes: Routes = [
   {
@@ -44,6 +49,26 @@ const routes: Routes = [
   {
     path: 'book',
     loadChildren: './components/book/book.module#BookModule'
+  },
+  {
+    path: 'city-add',
+    component: CityComponent
+  },
+  {
+    path: 'city-list',
+    component: CityListComponent
+  },
+  {
+    path: 'user',
+    component: UserComponent
+  },
+  {
+    path: 'user-reactive-form',
+    component: UserReactiveFormComponent
+  },
+  {
+    path: 'team',
+    component: TeamComponent
   },
   {
     path: 'error',

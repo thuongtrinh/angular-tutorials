@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Country } from 'src/app/models/country.model';
-import { FormControl, FormBuilder, FormGroup } from '@angular/forms';
+import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CountryService } from 'src/app/services/country.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map, switchMap } from 'rxjs/operators';
@@ -38,7 +38,7 @@ export class CountryEditComponent implements OnInit {
   createForm(country: Country) {
     this.countryForm = this.formBuilder.group({
       countryId: country.countryId,
-      name: country.name,
+      name: [country.name, Validators.required],
       capital: country.capital,
       currency: country.currency
     });
@@ -58,8 +58,6 @@ export class CountryEditComponent implements OnInit {
   //     this.isUpdating = false;
   //     return this.dialogService.confirm('Discard changes for Person?');
   //   }
-
   //   return true;
   // }
-
 }

@@ -1,11 +1,20 @@
 export class Person {
-  // name: string;
-  // city: string;
-  // mobile: string;
+
+  public personId: number;
+  public gender: string;
+  public position: string;
+  public houseNumber: number;
+
   constructor(
-    public personId: number,
     public name: string,
+    public age: number,
     public city: string,
-    public mobile: string
+    public country: string,
+    public mobile: string,
+    public married: boolean
   ) {}
+
+  public setPersonId(id: number) {
+    this.personId = id;
+  }
 }

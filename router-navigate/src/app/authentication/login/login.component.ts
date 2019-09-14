@@ -28,6 +28,9 @@ export class LoginComponent implements OnInit {
     this.authService.isUserAuthenticated(user, pass).subscribe(
       authenticated => {
         if (authenticated) {
+          sessionStorage.setItem('SessionUsername', user);
+          sessionStorage.setItem('SessionPassword', pass);
+
           let url = this.authService.getRedirectUrl();
           if (url.indexOf('dashboard') === -1) {
             url = 'dashboard/' + url;
