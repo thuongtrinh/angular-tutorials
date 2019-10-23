@@ -20,7 +20,7 @@ export class AuthGuardService
 
   canLoad(route: Route): boolean | Observable<boolean> | Promise<boolean> {
     const url: string = route.path;
-    console.log('Url:' + url);
+    console.log('Url canLoad:' + url);
 
     if (this.authService.isUserLoggedIn()) {
       return true;
@@ -30,7 +30,7 @@ export class AuthGuardService
 
     console.log('LoginUrl: ' + this.authService.getLoginUrl());
     this.router.navigate([this.authService.getLoginUrl()]);
-    return false;
+    return true;
   }
 
   canActivate(
@@ -38,7 +38,7 @@ export class AuthGuardService
     state: RouterStateSnapshot
   ): boolean {
     const url = state.url;
-    console.log('Url: ' + url);
+    console.log('Url canActivate: ' + url);
 
     if (this.authService.isUserLoggedIn()) {
       return true;
@@ -59,5 +59,4 @@ export class AuthGuardService
       return false;
     }
   }
-
 }

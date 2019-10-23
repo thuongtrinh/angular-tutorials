@@ -4,16 +4,14 @@ import { Observable } from 'rxjs';
 export class TestData implements InMemoryDbService {
 
   createDb(reqInfo?: RequestInfo): {} | Observable<{}> | Promise<{}> {
-    let userDetails = [
-      {id: 1, username: 'trump', email: 'trump@gmail.com', mobileNumber: '0973456989'},
-      {id: 2, username: 'karis', email: 'karis@gmail.com', mobileNumber: '0568345597'}
+
+    let articles = [
+      {id: 1, title: 'Angular Tutorials', category: 'Angular'},
+      {id: 2, title: 'Core Java Tutorial', category: 'Java'},
+      {id: 3, title: 'Spring Tutorial', category: 'Java'},
+      {id: 4, title: 'Hibernate Tutorial', category: 'Hibernate'}
     ];
 
-    let backListedMobileNumbers = [
-      {id: 111, mobileNumber: '0888757870'},
-      {id: 222, mobileNumber: '0566670329'}
-    ];
-
-    return {users: userDetails, backListedMNums: backListedMobileNumbers};
+    return { articles };
   }
 }

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Person } from 'src/app/models/person.model';
 import { PersonService } from 'src/app/services/person.service';
 import { ActivatedRoute } from '@angular/router';
-import { pipe } from '@angular/core/src/render3';
 import { map, switchMap } from 'rxjs/operators';
 
 @Component({

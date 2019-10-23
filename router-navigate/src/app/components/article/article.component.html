@@ -1,7 +1,7 @@
-<h2 class="text-center">Article management</h2>
-<div>
-  <button [routerLink]="['list']" class="btn btn-primary ml-3">Show list</button>
-</div>
+<h2 class="text-left">Article management</h2>
 <div class="mt-4">
-  <router-outlet></router-outlet>
+  <app-article-add></app-article-add>
+</div>
+<div class="mt-4 mbot-100">
+  <app-article-list></app-article-list>
 </div>

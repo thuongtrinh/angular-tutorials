@@ -9,6 +9,8 @@ import { PersonAddComponent } from './person-add/person-add.component';
 import { PersonRoutingModule } from './person-routing.module';
 import { PersonService } from 'src/app/services/person.service';
 import { PersonEditComponent } from './person-edit/person-edit.component';
+import { httpInterceptorProviders } from 'src/app/http-interceptors';
+import { CacheMapService } from 'src/app/services/cache-map.service';
 
 @NgModule({
   imports: [CommonModule, ReactiveFormsModule, PersonRoutingModule],
@@ -19,6 +21,13 @@ import { PersonEditComponent } from './person-edit/person-edit.component';
     PersonDetailComponent,
     PersonEditComponent
   ],
-  providers: [PersonService]
+  providers: [
+    PersonService,
+    httpInterceptorProviders,
+    CacheMapService,
+    {
+      provide: Cache, useClass: CacheMapService
+    }
+  ]
 })
 export class PersonModule {}

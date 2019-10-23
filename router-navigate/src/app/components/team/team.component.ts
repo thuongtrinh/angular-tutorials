@@ -3,9 +3,7 @@ import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { TeamService } from 'src/app/services/team.service';
 import { Observable } from 'rxjs';
 import { Department } from 'src/app/models/department.model';
-import { Employee } from 'src/app/models/employee.model';
 import { Team } from 'src/app/models/team.model';
-import { VALID } from '@angular/forms/src/model';
 
 @Component({
   selector: 'app-team',

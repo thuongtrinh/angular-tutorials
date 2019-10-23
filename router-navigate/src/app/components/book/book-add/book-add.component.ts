@@ -26,10 +26,21 @@ export class BookAddComponent implements OnInit {
     console.log('Book add start');
   }
 
-  add() {
-    this.bookService
-      .addBook(this.book)
-      .then(() => this.router.navigate([{ outlets: { bookPopup: null } }]));
+  addBookWithObservable() {
+    let size = 0;
+    this.bookService.getBooksWithObservable().subscribe(books => {
+      size = books.length;
+    });
+    this.book.bookId = size + 1;
+    this.book.state = 'on';
+
+    this.bookService.addBookWithObservable(this.book).subscribe(books => console.log(books));
+      // .subscribe(() => {
+      //     this.observableBooks = this.bookService.getBooksWithObservable();
+      //     this.router.navigate([{ outlets: { bookPopup: null } }]);
+      //   }
+      // );
+    this.bookService.getBooksWithObservable().subscribe(books => console.log(books));
   }
 
   close() {

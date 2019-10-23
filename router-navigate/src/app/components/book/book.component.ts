@@ -20,7 +20,7 @@ export class BookComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.books = this.bookService.getBooks();
+    this.books = this.bookService.getBooksWithPromise();
   }
 
   edit(book: Book) {

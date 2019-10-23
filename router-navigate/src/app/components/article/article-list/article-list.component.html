@@ -9,12 +9,13 @@
   </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let article of articles | async">
-      <td>{{ article.articleId }}</td>
+    <tr *ngFor="let article of articles$ | async">
+      <td>{{ article.id }}</td>
       <td>{{ article.title }}</td>
       <td>{{ article.category }}</td>
       <td>
         <button class="btn btn-info" (click)="gotoEdit(article)">Edit</button>
+        <button class="btn btn-danger ml-5" (click)="gotoDelete(article)">Delete</button>
       </td>
     </tr>
   </tbody>

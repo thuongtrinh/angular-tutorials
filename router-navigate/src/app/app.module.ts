@@ -3,6 +3,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,18 +16,11 @@ import { LogoutComponent } from './authentication/logout/logout.component';
 import { SharedModule } from './shared/shared.module';
 import { CityComponent } from './components/city/city.component';
 import { CityListComponent } from './components/city/city-list/city-list.component';
-import { UserComponent } from './components/user/user.component';
 import { TeamComponent } from './components/team/team.component';
-import { UserReactiveFormComponent } from './components/user/user-reactive-form/user-reactive-form.component';
-import { CustomMinDirective } from './custom-validators/custom-min-directive';
-import { CustomMaxDirective } from './custom-validators/custom-max-directive';
-import { ExistingUsernameValidatorDirective } from './custom-validators/existing-username-validator';
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { TestData } from './components/Data/test-data';
-import { ExistingEmailValidatorDirective } from './custom-validators/existing-email-validator';
-import { ExistingMobileValidatorDirective } from './custom-validators/existing-mobile-validator';
-import { BlackListedMobileNumberValidatorDirective } from './custom-validators/blacklisted-mobilenumber-validator';
-import { PwdCannotSameUserValidatorDirective } from './custom-validators/pwd-cannot-same-user-validator';
+import { RequestsComponent } from './http-interceptors/requests/requests.component';
+import { RouterModule } from '@angular/router';
+import { httpInterceptorProviders } from './http-interceptors';
+import { AjaxBusyIndicatorDirective } from './http-interceptors/ajaxBusyInterceptor/ajax-busy-indicator.directive';
 
 @NgModule({
   imports: [
@@ -37,8 +31,10 @@ import { PwdCannotSameUserValidatorDirective } from './custom-validators/pwd-can
     AuthModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    RouterModule,
     SharedModule.forRoot(),
-    InMemoryWebApiModule.forRoot(TestData)
+    // InMemoryWebApiModule.forRoot(UserData),
+    ToastrModule.forRoot()
   ],
   declarations: [
     AppComponent,
@@ -49,24 +45,14 @@ import { PwdCannotSameUserValidatorDirective } from './custom-validators/pwd-can
     LogoutComponent,
     CityComponent,
     CityListComponent,
-    UserComponent,
     TeamComponent,
-    UserReactiveFormComponent,
-    CustomMinDirective,
-    CustomMaxDirective,
-    ExistingUsernameValidatorDirective,
-    ExistingEmailValidatorDirective,
-    ExistingMobileValidatorDirective,
-    BlackListedMobileNumberValidatorDirective,
-    PwdCannotSameUserValidatorDirective
+    RequestsComponent,
+    AjaxBusyIndicatorDirective
   ],
   providers: [
-    GlobalErrorHandlerService,
-    {
-      provide: ErrorHandler, useClass: GlobalErrorHandlerService
-    }
+    GlobalErrorHandlerService, { provide: ErrorHandler, useClass: GlobalErrorHandlerService },
+    httpInterceptorProviders
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
