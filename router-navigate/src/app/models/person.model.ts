@@ -4,6 +4,7 @@ export class Person {
   public gender: string;
   public position: string;
   public houseNumber: number;
+  public dob: Date;
 
   constructor(
     public name: string,
@@ -16,5 +17,9 @@ export class Person {
 
   public setPersonId(id: number) {
     this.personId = id;
+  }
+
+  public setDob(dobp: Date) {
+    this.dob = dobp;
   }
 }

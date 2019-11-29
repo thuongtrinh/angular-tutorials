@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 
 import { Person } from '../models/person.model';
-import { map } from 'rxjs/operators';
+import { map, find } from 'rxjs/operators';
 
 const p1 = new Person('Smith1', 20, 'Varanasi', 'VN', '0978776555', false);
 const p2 = new Person('Smith2', 22, 'Ayodhya', 'VN', '0967855447', false);
@@ -12,10 +12,10 @@ p1.setPersonId(1);
 p1.gender = 'male';
 p2.setPersonId(2);
 p3.setPersonId(3);
-const PERSONS = [ p1, p2, p3 ];
+let PERSONS = [ p1, p2, p3 ];
 
-const personList$ = of(PERSONS);
-const personListPromise = Promise.resolve(PERSONS);
+let personList$ = of(PERSONS);
+let personListPromise = Promise.resolve(PERSONS);
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +25,10 @@ export class PersonService {
   url = '/api/person';
 
   constructor(private http: HttpClient) {}
+
+  getPersonArr() {
+    return PERSONS;
+  }
 
   addPerson(person: Person): Observable<Person>{
     // return this.http.post<Person>(this.url, person);
@@ -52,5 +56,10 @@ export class PersonService {
       personObj = person;
       return personObj;
     }));
+  }
+
+  remove(personId: number) {
+    let obj = this.getPersonArr().find(ob => ob.personId === personId);
+    this.getPersonArr().splice(this.getPersonArr().indexOf(obj), 1);
   }
 }

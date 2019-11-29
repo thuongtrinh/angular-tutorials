@@ -4,4 +4,5 @@ export class Employee {
   skill = '';
 
   constructor() {}
+
 }

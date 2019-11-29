@@ -6,10 +6,12 @@ import { DashboardLayoutComponent } from './components/dashboard-layout/dashboar
 import { AuthGuardService } from './services/auth-guard.service';
 import { CityComponent } from './components/city/city.component';
 import { CityListComponent } from './components/city/city-list/city-list.component';
-// import { UserComponent } from './components/user/user.component';
 import { TeamComponent } from './components/team/team.component';
-// import { UserReactiveFormComponent } from './components/user/user-reactive-form/user-reactive-form.component';
 import { RequestsComponent } from './http-interceptors/requests/requests.component';
+import { CustomDirectivesComponent } from './components/custom-directives/custom-directives.component';
+import { ViewchildComponent } from './components/viewchild/viewchild.component';
+import { PipesComponent } from './components/pipes/pipes.component';
+import { CustomPipeComponent } from './components/pipes/custom-pipe/custom-pipe.component';
 
 const routes: Routes = [
   {
@@ -63,14 +65,6 @@ const routes: Routes = [
     path: 'city-list',
     component: CityListComponent
   },
-  // {
-  //   path: 'user',
-  //   component: UserComponent
-  // },
-  // {
-  //   path: 'user-reactive-form',
-  //   component: UserReactiveFormComponent
-  // },
   {
     path: 'team',
     component: TeamComponent
@@ -80,8 +74,24 @@ const routes: Routes = [
     component: RequestsComponent
   },
   {
+    path: 'custom-directive',
+    component: CustomDirectivesComponent
+  },
+  {
+    path: 'viewchild',
+    component: ViewchildComponent
+  },
+  {
     path: 'error',
     component: GlobalErrorComponent
+  },
+  {
+    path: 'pipes',
+    component: PipesComponent
+  },
+  {
+    path: 'pipes/custom-async-pipe',
+    component: CustomPipeComponent
   },
   {
     path: '**',
