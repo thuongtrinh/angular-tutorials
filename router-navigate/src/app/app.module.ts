@@ -72,6 +72,60 @@ import { MyuppercasetwoPipe } from './components/pipes/define/myuppercasetwo.pip
 import { CompanytwoPipe } from './components/pipes/define/companytwo.pipe';
 import { CompanyonePipe } from './components/pipes/define/companyone.pipe';
 import { RepeatPipe } from './components/pipes/define/repeat.pipe';
+import { CompLifecycleComponent } from './components/comp-lifecycle/comp-lifecycle.component';
+import { PersonCompComponent } from './components/comp-lifecycle/person-comp/person-comp.component';
+import { CompanyCompComponent } from './components/comp-lifecycle/company-comp/company-comp.component';
+import { AddressCompComponent } from './components/comp-lifecycle/address-comp/address-comp.component';
+import { PostBannerComponent } from './components/comp-lifecycle/post-banner/post-banner.component';
+import { MyPostComponent } from './components/comp-lifecycle/my-post/my-post.component';
+import { ArticlePostComponent } from './components/comp-lifecycle/article-post/article-post.component';
+import { TechnologyComponent } from './components/comp-lifecycle/technology/technology.component';
+import { MypostService } from './services/mypost.service';
+import { MyPostDirective } from './components/comp-lifecycle/mypost.directive';
+import { ChangeSimplechangeComponent } from './components/comp-lifecycle/change-simplechange/change-simplechange.component';
+import { AppEmpComponent } from './components/comp-lifecycle/change-simplechange/app-emp.component';
+import { LifeCompComponent } from './components/comp-lifecycle/life-comp/life-comp.component';
+import { CompDirective } from './components/comp-lifecycle/life-comp/comp.directive';
+import { Comp1Component } from './components/comp-lifecycle/life-comp/comp1.component';
+import { Comp2Component } from './components/comp-lifecycle/life-comp/comp2.component';
+import { CounterComponent } from './components/comp-lifecycle/life-comp/counter.component';
+import { AfterViewInitComponent } from './components/comp-lifecycle/after-view-init/after-view-init.component';
+import { MessageAfterDirective } from './components/comp-lifecycle/after-view-init/message-after.directive';
+import { MessageAfterComponent } from './components/comp-lifecycle/after-view-init/message-after.component';
+import { LifecycleHookComponent } from './components/comp-lifecycle/after-view-init/lifecycle-hook.component';
+import { AfterViewInitDemoComponent } from './components/comp-lifecycle/after-view-init/after-view-init-demo.component';
+import { KeyvalueDiffersComponent } from './components/comp-lifecycle/keyvalue-differs/keyvalue-differs.component';
+import { EmployeeDiffersComponent } from './components/comp-lifecycle/keyvalue-differs/employee-differs.component';
+import { NbClassDirective } from './components/comp-lifecycle/keyvalue-differs/nb-class.directive';
+import { DoCheckComponent } from './components/comp-lifecycle/do-check/do-check.component';
+import { EmployeeITRDiffComponent } from './components/comp-lifecycle/do-check/employee-itrdiff.component';
+import { EmployeeKVDiffComponent } from './components/comp-lifecycle/do-check/employee-kvdiff.component';
+import { AppProvidersComponent } from './components/comp-lifecycle/app-providers/app-providers.component';
+import { AnyAnimalComponent } from './components/comp-lifecycle/app-providers/any-animal.component';
+import { AnimalDetailsComponent } from './components/comp-lifecycle/app-providers/animal-details.component';
+import { ComputerComponent } from './components/comp-lifecycle/app-providers/computer.component';
+import { LionComponent } from './components/comp-lifecycle/app-providers/lion.component';
+import { BookaComponent } from './components/comp-lifecycle/app-providers/booka.component';
+import { PreBookComponent } from './components/comp-lifecycle/app-providers/pre-book.component';
+import { OptionalComponent } from './components/comp-lifecycle/app-providers/optional.component';
+import { XservicesComponent } from './components/xservices/xservices.component';
+import { AppRenderer2Component } from './components/xservices/app-renderer2/app-renderer2.component';
+import { AppendDemoComponent } from './components/xservices/app-renderer2/append-demo.component';
+import { ListenDemoComponent } from './components/xservices/app-renderer2/listen-demo.component';
+import { ZappCpComponent } from './components/xservices/app-renderer2/zapp-cp.component';
+import { Cp1Directive } from './components/xservices/directives/cp1.directive';
+import { Cp2Directive } from './components/xservices/directives/cp2.directive';
+import { Cp3Directive } from './components/xservices/directives/cp3.directive';
+import { Cp4Directive } from './components/xservices/directives/cp4.directive';
+import { Cp5Directive } from './components/xservices/directives/cp5.directive';
+import { Cp6Directive } from './components/xservices/directives/cp6.directive';
+import { Cp7Directive } from './components/xservices/directives/cp7.directive';
+import { Cp8Directive } from './components/xservices/directives/cp8.directive';
+import { Cp9Directive } from './components/xservices/directives/cp9.directive';
+import { Cp10Directive } from './components/xservices/directives/cp10.directive';
+import { Cp11Directive } from './components/xservices/directives/cp11.directive';
+import { MetaTagsComponent } from './components/xservices/meta-tags/meta-tags.component';
+import { TitleCanonicalComponent } from './components/xservices/title-canonical/title-canonical.component';
 
 @NgModule({
   imports: [
@@ -149,11 +203,70 @@ import { RepeatPipe } from './components/pipes/define/repeat.pipe';
     CompanytwoPipe,
     CompanyonePipe,
     RepeatPipe,
+    CompLifecycleComponent,
+    PersonCompComponent,
+    CompanyCompComponent,
+    AddressCompComponent,
+    PostBannerComponent,
+    MyPostComponent,
+    ArticlePostComponent,
+    TechnologyComponent,
+    MyPostDirective,
+    ChangeSimplechangeComponent,
+    AppEmpComponent,
+    LifeCompComponent,
+    CompDirective,
+    Comp1Component,
+    Comp2Component,
+    CounterComponent,
+    AfterViewInitComponent,
+    MessageAfterDirective,
+    MessageAfterComponent,
+    LifecycleHookComponent,
+    AfterViewInitDemoComponent,
+    KeyvalueDiffersComponent,
+    EmployeeDiffersComponent,
+    NbClassDirective,
+    DoCheckComponent,
+    EmployeeITRDiffComponent,
+    EmployeeKVDiffComponent,
+    AppProvidersComponent,
+    AnyAnimalComponent,
+    AnimalDetailsComponent,
+    LionComponent,
+    ComputerComponent,
+    BookaComponent,
+    PreBookComponent,
+    OptionalComponent,
+    XservicesComponent,
+    AppRenderer2Component,
+    AppendDemoComponent,
+    ListenDemoComponent,
+    ZappCpComponent,
+    Cp1Directive,
+    Cp2Directive,
+    Cp3Directive,
+    Cp4Directive,
+    Cp5Directive,
+    Cp6Directive,
+    Cp7Directive,
+    Cp8Directive,
+    Cp9Directive,
+    Cp10Directive,
+    Cp11Directive,
+    MetaTagsComponent,
+    TitleCanonicalComponent
+  ],
+  entryComponents: [
+    ArticlePostComponent,
+    TechnologyComponent
   ],
   providers: [
-    GlobalErrorHandlerService, { provide: ErrorHandler, useClass: GlobalErrorHandlerService },
+    GlobalErrorHandlerService,
+    { provide: ErrorHandler, useClass: GlobalErrorHandlerService },
     httpInterceptorProviders,
-    PersonService
+    PersonService,
+    MypostService
   ],
   bootstrap: [AppComponent]
 })

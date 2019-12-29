@@ -6,7 +6,7 @@
   <app-cpcolor-parent></app-cpcolor-parent>
   <app-cptheme></app-cptheme>
   <br>
-  <h3>ContentChild using Directive</h3>
+  <h3>1. ContentChild using Directive</h3>
   <app-writer>
     <book bookId="1" bookName="Java 8 Tutorials" *ngIf="latestBook"></book>
     <book bookId="2" bookName="Learning Angular" *ngIf="!latestBook"></book>
@@ -14,7 +14,7 @@
   <button class="btn btn-primary" (click)="onChangeBook()">Change Book</button>
 
   <br><br>
-  <h3>ContentChildren using Directive</h3>
+  <h3>2. ContentChildren using Directive</h3>
   <app-favourite-books>
     <book bookId="1" bookName="Hibernate 4 Tutorials"></book>
     <book bookId="2" bookName="Spring Boot Tutorials"></book>
@@ -32,7 +32,7 @@
   </button>
 
   <br><br>
-  <h3>ContentChild using Component</h3>
+  <h3>3. ContentChild using Component</h3>
   <app-address2>
     <app-city2 cityId="1" cityName="Varanasi" *ngIf="homeTown"></app-city2>
     <app-city2 cityId="2" cityName="Noida" *ngIf="!homeTown"></app-city2>
@@ -40,7 +40,7 @@
   <button class="btn btn-primary" (click)="onChangeCity()">Change City</button>
 
   <br><br>
-  <h3>ContentChildren using Component</h3>
+  <h3>4. using Component</h3>
   <app-favourite-cities>
     <app-city2 cityId="1" cityName="Noida"></app-city2>
     <app-city2 cityId="2" cityName="Mumbai"></app-city2>
@@ -58,7 +58,7 @@
   </button>
 
   <br><br>
-  <h3>ContentChild using ElementRef</h3>
+  <h3>5. ContentChild using ElementRef</h3>
   <app-friend>
     <div #name *ngIf="bestFriend">Thuong</div>
     <div #name *ngIf="!bestFriend">Trinh</div>
@@ -66,7 +66,7 @@
   <button class="btn btn-primary" (click)="onChangeFriend()">Change Friend</button>
 
   <br><br>
-  <h3>ContentChildren using ElementRef</h3>
+  <h3>6.  using ElementRef</h3>
   <app-favourite-friends>
     <div #name>Mohit</div>
 	  <div #name>Anup</div>

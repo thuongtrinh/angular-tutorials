@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "custom-directives.component.scss"
-    ],
-    "names": [],
-    "file": "custom-directives.component.css"
-}

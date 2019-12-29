@@ -6,7 +6,6 @@ import { PersonService } from 'src/app/services/person.service';
 @Component({
   selector: 'app-custom-directives',
   templateUrl: './custom-directives.component.html',
-  styleUrls: ['./custom-directives.component.scss']
 })
 export class CustomDirectivesComponent implements OnInit {
 

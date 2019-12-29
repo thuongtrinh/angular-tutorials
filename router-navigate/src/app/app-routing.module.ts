@@ -12,6 +12,20 @@ import { CustomDirectivesComponent } from './components/custom-directives/custom
 import { ViewchildComponent } from './components/viewchild/viewchild.component';
 import { PipesComponent } from './components/pipes/pipes.component';
 import { CustomPipeComponent } from './components/pipes/custom-pipe/custom-pipe.component';
+import { CompLifecycleComponent } from './components/comp-lifecycle/comp-lifecycle.component';
+import { PersonCompComponent } from './components/comp-lifecycle/person-comp/person-comp.component';
+import { CompanyCompComponent } from './components/comp-lifecycle/company-comp/company-comp.component';
+import { PostBannerComponent } from './components/comp-lifecycle/post-banner/post-banner.component';
+import { ChangeSimplechangeComponent } from './components/comp-lifecycle/change-simplechange/change-simplechange.component';
+import { LifeCompComponent } from './components/comp-lifecycle/life-comp/life-comp.component';
+import { AfterViewInitComponent } from './components/comp-lifecycle/after-view-init/after-view-init.component';
+import { KeyvalueDiffersComponent } from './components/comp-lifecycle/keyvalue-differs/keyvalue-differs.component';
+import { DoCheckComponent } from './components/comp-lifecycle/do-check/do-check.component';
+import { AppProvidersComponent } from './components/comp-lifecycle/app-providers/app-providers.component';
+import { XservicesComponent } from './components/xservices/xservices.component';
+import { AppRenderer2Component } from './components/xservices/app-renderer2/app-renderer2.component';
+import { MetaTagsComponent } from './components/xservices/meta-tags/meta-tags.component';
+import { TitleCanonicalComponent } from './components/xservices/title-canonical/title-canonical.component';
 
 const routes: Routes = [
   {
@@ -92,6 +106,62 @@ const routes: Routes = [
   {
     path: 'pipes/custom-async-pipe',
     component: CustomPipeComponent
+  },
+  {
+    path: 'compLifecycle',
+    component: CompLifecycleComponent
+  },
+  {
+    path: 'compLifecycle/person-comp',
+    component: PersonCompComponent
+  },
+  {
+    path: 'company-comp',
+    component: CompanyCompComponent
+  },
+  {
+    path: 'compLifecycle/post-banner',
+    component: PostBannerComponent
+  },
+  {
+    path: 'compLifecycle/change-simplechange',
+    component: ChangeSimplechangeComponent
+  },
+  {
+    path: 'compLifecycle/life-comp',
+    component: LifeCompComponent
+  },
+  {
+    path: 'compLifecycle/after-view-init',
+    component: AfterViewInitComponent
+  },
+  {
+    path: 'compLifecycle/keyvalue-differs',
+    component: KeyvalueDiffersComponent
+  },
+  {
+    path: 'compLifecycle/do-check',
+    component: DoCheckComponent
+  },
+  {
+    path: 'compLifecycle/app-providers',
+    component: AppProvidersComponent
+  },
+  {
+    path: 'app-services',
+    component: XservicesComponent
+  },
+  {
+    path: 'app-services/app-renderer2',
+    component: AppRenderer2Component
+  },
+  {
+    path: 'app-services/meta-tags',
+    component: MetaTagsComponent
+  },
+  {
+    path: 'app-services/title-canonical',
+    component: TitleCanonicalComponent
   },
   {
     path: '**',
