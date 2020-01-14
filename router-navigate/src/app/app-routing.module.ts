@@ -26,6 +26,15 @@ import { XservicesComponent } from './components/xservices/xservices.component';
 import { AppRenderer2Component } from './components/xservices/app-renderer2/app-renderer2.component';
 import { MetaTagsComponent } from './components/xservices/meta-tags/meta-tags.component';
 import { TitleCanonicalComponent } from './components/xservices/title-canonical/title-canonical.component';
+import { AppNgRxComponent } from './components/app-ng-rx/app-ng-rx.component';
+import { NgrxStoreComponent } from './components/app-ng-rx/ngrx-store/ngrx-store.component';
+import { NgrxEffectsComponent } from './components/app-ng-rx/ngrx-effects/ngrx-effects.component';
+import { McheckboxComponent } from './components/materials/mcheckbox/mcheckbox.component';
+import { MaterialsComponent } from './components/materials/materials.component';
+import { MtableComponent } from './components/materials/mtable/mtable.component';
+import { MTextareaComponent } from './components/materials/m-textarea/m-textarea.component';
+import { MRadioComponent } from './components/materials/m-radio/m-radio.component';
+import { MToggleComponent } from './components/materials/m-toggle/m-toggle.component';
 
 const routes: Routes = [
   {
@@ -162,6 +171,42 @@ const routes: Routes = [
   {
     path: 'app-services/title-canonical',
     component: TitleCanonicalComponent
+  },
+  {
+    path: 'app-ngRx',
+    component: AppNgRxComponent
+  },
+  {
+    path: 'app-ngRx/ngrx-store',
+    component: NgrxStoreComponent
+  },
+  {
+    path: 'app-ngRx/ngrx-efects',
+    component: NgrxEffectsComponent
+  },
+  {
+    path: 'app-material',
+    component: MaterialsComponent
+  },
+  {
+    path: 'app-material/material-checkbox',
+    component: McheckboxComponent
+  },
+  {
+    path: 'app-material/material-table',
+    component: MtableComponent
+  },
+  {
+    path: 'app-material/material-textarea',
+    component: MTextareaComponent
+  },
+  {
+    path: 'app-material/material-radio',
+    component: MRadioComponent
+  },
+  {
+    path: 'app-material/material-toggle',
+    component: MToggleComponent
   },
   {
     path: '**',

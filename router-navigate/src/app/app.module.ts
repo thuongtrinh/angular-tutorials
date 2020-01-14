@@ -4,6 +4,13 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { MatCommonModule, MatNativeDateModule } from '@angular/material/core';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -126,6 +133,37 @@ import { Cp10Directive } from './components/xservices/directives/cp10.directive'
 import { Cp11Directive } from './components/xservices/directives/cp11.directive';
 import { MetaTagsComponent } from './components/xservices/meta-tags/meta-tags.component';
 import { TitleCanonicalComponent } from './components/xservices/title-canonical/title-canonical.component';
+import { AppNgRxComponent } from './components/app-ng-rx/app-ng-rx.component';
+import { NgrxStoreComponent } from './components/app-ng-rx/ngrx-store/ngrx-store.component';
+import { StoreModule } from '@ngrx/store';
+// import { reducers2, metaReducers2 } from './components/app-ng-rx/ngrx-effects/reducers/reducers2';
+import { reducers, metaReducers } from './components/app-ng-rx/ngrx-store/reducers/reducer';
+import { NgrxEffectsComponent } from './components/app-ng-rx/ngrx-effects/ngrx-effects.component';
+import { EffectsModule } from '@ngrx/effects';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { TestData2 } from './components/app-ng-rx/ngrx-effects/test-data2';
+import { Article2Effects } from './components/app-ng-rx/ngrx-effects/effects/article2.effects';
+import { Article2Service } from './components/app-ng-rx/ngrx-effects/services/article2.service';
+import { MaterialsComponent } from './components/materials/materials.component';
+import { McheckboxComponent } from './components/materials/mcheckbox/mcheckbox.component';
+import { MdCheckboxDemoComponent } from './components/materials/mcheckbox/md-checkbox-demo';
+import { ReactiveFormComponent } from './components/materials/mcheckbox/reactive-form.component';
+import { TemplateDrivenFormComponent } from './components/materials/mcheckbox/template-driven-form.component';
+import { MtableComponent } from './components/materials/mtable/mtable.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MtbArticleComponent } from './components/materials/mtable/mtb-article.component';
+import { MTextareaComponent } from './components/materials/m-textarea/m-textarea.component';
+import { TemplateDrivenFormTxareaComponent } from './components/materials/m-textarea/template-driven-form-txarea.component';
+import { ReactiveFormTxareaComponent } from './components/materials/m-textarea/reactive-form-txarea.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MRadioComponent } from './components/materials/m-radio/m-radio.component';
+import { ReactiveFormRadioComponent } from './components/materials/m-radio/reactive-form-radio.component';
+import { TemplateDrivenFormRadioComponent } from './components/materials/m-radio/template-driven-form-radio.component';
+import { MToggleComponent } from './components/materials/m-toggle/m-toggle.component';
+import { ReactiveFormToggleComponent } from './components/materials/m-toggle/reactive-form-toggle.component';
+import { TemplateDrivenFormToggleComponent } from './components/materials/m-toggle/template-driven-form-toggle.component';
 
 @NgModule({
   imports: [
@@ -139,7 +177,26 @@ import { TitleCanonicalComponent } from './components/xservices/title-canonical/
     RouterModule,
     SharedModule.forRoot(),
     // InMemoryWebApiModule.forRoot(UserData),
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    StoreModule.forRoot(reducers, {metaReducers}),
+    // StoreModule.forRoot(reducers2, {metaReducers2}), // open comment after checking
+    EffectsModule.forRoot([Article2Effects]),
+    InMemoryWebApiModule.forRoot(TestData2),
+
+    // Material module
+    MatCommonModule,
+    MatCheckboxModule,
+    MatButtonModule,
+    MatInputModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatNativeDateModule,
+
+    MatFormFieldModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatSlideToggleModule
   ],
   declarations: [
     AppComponent,
@@ -255,7 +312,30 @@ import { TitleCanonicalComponent } from './components/xservices/title-canonical/
     Cp10Directive,
     Cp11Directive,
     MetaTagsComponent,
-    TitleCanonicalComponent
+    TitleCanonicalComponent,
+
+    // NgRx
+    AppNgRxComponent,
+    NgrxStoreComponent,
+    NgrxEffectsComponent,
+
+    // Material
+    MaterialsComponent,
+    McheckboxComponent,
+    MdCheckboxDemoComponent,
+    ReactiveFormComponent,
+    TemplateDrivenFormComponent,
+    MtableComponent,
+    MtbArticleComponent,
+    MTextareaComponent,
+    ReactiveFormTxareaComponent,
+    TemplateDrivenFormTxareaComponent,
+    MRadioComponent,
+    ReactiveFormRadioComponent,
+    TemplateDrivenFormRadioComponent,
+    MToggleComponent,
+    ReactiveFormToggleComponent,
+    TemplateDrivenFormToggleComponent
   ],
   entryComponents: [
     ArticlePostComponent,
@@ -266,7 +346,8 @@ import { TitleCanonicalComponent } from './components/xservices/title-canonical/
     { provide: ErrorHandler, useClass: GlobalErrorHandlerService },
     httpInterceptorProviders,
     PersonService,
-    MypostService
+    MypostService,
+    Article2Service
   ],
   bootstrap: [AppComponent]
 })
