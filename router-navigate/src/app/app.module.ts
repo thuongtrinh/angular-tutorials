@@ -164,6 +164,8 @@ import { TemplateDrivenFormRadioComponent } from './components/materials/m-radio
 import { MToggleComponent } from './components/materials/m-toggle/m-toggle.component';
 import { ReactiveFormToggleComponent } from './components/materials/m-toggle/reactive-form-toggle.component';
 import { TemplateDrivenFormToggleComponent } from './components/materials/m-toggle/template-driven-form-toggle.component';
+import { ArticleSpringComponent } from './components/article-spring/article-spring.component';
+import { ArticleSpringService } from './services/article-spring.service';
 
 @NgModule({
   imports: [
@@ -181,7 +183,7 @@ import { TemplateDrivenFormToggleComponent } from './components/materials/m-togg
     StoreModule.forRoot(reducers, {metaReducers}),
     // StoreModule.forRoot(reducers2, {metaReducers2}), // open comment after checking
     EffectsModule.forRoot([Article2Effects]),
-    InMemoryWebApiModule.forRoot(TestData2),
+    // InMemoryWebApiModule.forRoot(TestData2), // comment this line to test angular-springboot
 
     // Material module
     MatCommonModule,
@@ -335,7 +337,8 @@ import { TemplateDrivenFormToggleComponent } from './components/materials/m-togg
     TemplateDrivenFormRadioComponent,
     MToggleComponent,
     ReactiveFormToggleComponent,
-    TemplateDrivenFormToggleComponent
+    TemplateDrivenFormToggleComponent,
+    ArticleSpringComponent
   ],
   entryComponents: [
     ArticlePostComponent,
@@ -347,7 +350,8 @@ import { TemplateDrivenFormToggleComponent } from './components/materials/m-togg
     httpInterceptorProviders,
     PersonService,
     MypostService,
-    Article2Service
+    Article2Service,
+    ArticleSpringService
   ],
   bootstrap: [AppComponent]
 })

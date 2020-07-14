@@ -52,6 +52,7 @@ export class AuthGuardService
   canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     const loggedInUser = this.authService.getLoggedInUser();
 
+    console.log('canActivateChild');
     if (loggedInUser.role === 'ADMIN') {
       return true;
     } else {

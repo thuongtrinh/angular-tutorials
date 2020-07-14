@@ -35,6 +35,7 @@ import { MtableComponent } from './components/materials/mtable/mtable.component'
 import { MTextareaComponent } from './components/materials/m-textarea/m-textarea.component';
 import { MRadioComponent } from './components/materials/m-radio/m-radio.component';
 import { MToggleComponent } from './components/materials/m-toggle/m-toggle.component';
+import { ArticleSpringComponent } from './components/article-spring/article-spring.component';
 
 const routes: Routes = [
   {
@@ -207,6 +208,10 @@ const routes: Routes = [
   {
     path: 'app-material/material-toggle',
     component: MToggleComponent
+  },
+  {
+    path: 'angularSpringBoot',
+    component: ArticleSpringComponent
   },
   {
     path: '**',
