@@ -126,6 +126,7 @@ export class CountryComponent implements OnInit {
   studyObservable() {
     // Example study
     //b01 abc
+    //b02 cde
     this.studyMapInRXJS();
   }
 
