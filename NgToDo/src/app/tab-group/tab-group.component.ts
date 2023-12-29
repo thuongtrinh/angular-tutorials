@@ -12,7 +12,6 @@ export class TabGroupComponent implements OnInit {
 
   @Input() tabActiveIndex = 0;
   @Output() tabActiveChange = new EventEmitter<number>();
-
   @ContentChildren(TabPanelComponent) tabPanels: QueryList<TabPanelComponent>;
 
   constructor() {}
